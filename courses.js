@@ -100,4 +100,6 @@ function updateTotalCredits(selectedCourses) {
 }
 
 // Initial Display
-displayCourses(courses);
+document.addEventListener("DOMContentLoaded", () => {
+    displayCourses(courses);
+});
