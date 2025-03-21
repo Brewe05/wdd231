@@ -1,48 +1,55 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const courses = [
-        { code: "CSE 110", category: "CSE", credits: 3, completed: true },
-        { code: "WDD 130", category: "WDD", credits: 3, completed: false },
-        { code: "CSE 111", category: "CSE", credits: 3, completed: true },
-        { code: "CSE 210", category: "CSE", credits: 4, completed: false },
-        { code: "WDD 131", category: "WDD", credits: 3, completed: false },
-        { code: "WDD 231", category: "WDD", credits: 3, completed: true }
-    ];
+// JavaScript to fix validation issues
 
+// Toggle Navigation Menu
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+}
+
+// Course List with Credits
+const courses = [
+    { code: "CSE 110", category: "CSE", credits: 3 },
+    { code: "WDD 130", category: "WDD", credits: 3 },
+    { code: "CSE 111", category: "CSE", credits: 4 },
+    { code: "CSE 210", category: "CSE", credits: 3 },
+    { code: "WDD 131", category: "WDD", credits: 3 },
+    { code: "WDD 231", category: "WDD", credits: 4 }
+];
+
+function displayCourses(filteredCourses) {
     const courseList = document.getElementById("course-list");
-    const totalCreditsElement = document.getElementById("total-credits");
-    const navMenu = document.getElementById("nav-menu");
+    courseList.innerHTML = "";
+    
+    filteredCourses.forEach(course => {
+        let courseDiv = document.createElement("div");
+        courseDiv.textContent = `${course.code} (${course.credits} credits)`;
+        courseDiv.classList.add("course-item");
+        courseList.appendChild(courseDiv);
+    });
 
-    function displayCourses(filter) {
-        courseList.innerHTML = "";
-        let totalCredits = 0;
+    updateTotalCredits(filteredCourses);
+}
 
-        courses.filter(course => filter === "all" || course.category === filter)
-            .forEach(course => {
-                const courseItem = document.createElement("div");
-                courseItem.textContent = course.code;
-                courseItem.classList.add("course-item");
-
-                if (course.completed) {
-                    courseItem.style.backgroundColor = "lightgray";
-                } else {
-                    courseItem.style.backgroundColor = "#654321";
-                    courseItem.style.color = "white";
-                }
-
-                totalCredits += course.credits;
-                courseList.appendChild(courseItem);
-            });
-
-        totalCreditsElement.textContent = totalCredits;
+// Filter Courses
+function filterCourses(category) {
+    if (category === "all") {
+        displayCourses(courses);
+    } else {
+        const filtered = courses.filter(course => course.category === category);
+        displayCourses(filtered);
     }
+}
 
-    window.filterCourses = displayCourses;
-    displayCourses("all");
+// Calculate Total Credits
+function updateTotalCredits(selectedCourses) {
+    const totalCredits = selectedCourses.reduce((sum, course) => sum + course.credits, 0);
+    document.getElementById("total-credits").textContent = totalCredits;
+}
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = "Last Update: " + document.lastModified;
+// Set Current Year in Footer
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    window.toggleMenu = function() {
-        navMenu.classList.toggle("active");
-    };
-});
+// Set Last Modified Date
+document.getElementById("lastModified").textContent = "Last Update: " + document.lastModified;
+
+// Initial Display
+displayCourses(courses);

@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -15,7 +15,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
 }
 
 .profile-pic {
@@ -25,12 +24,7 @@ header {
     margin-left: 10px;
 }
 
-.name {
-    flex-grow: 1;
-    font-size: 1.2em;
-}
-
-/* Navigation */
+/* Hamburger Menu */
 .menu-icon {
     display: none;
     font-size: 24px;
@@ -44,7 +38,6 @@ nav ul {
     background: black;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -84,34 +77,6 @@ nav ul li a {
     }
 }
 
-/* Sections */
-h1, h2 {
-    color: #002b5c;
-}
-
-.optimized-image {
-    width: 100%;
-    max-width: 300px;
-}
-
-.course-buttons, .courses {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-button {
-    background-color: #654321;
-    color: white;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    width: 90%;
-    max-width: 200px;
-}
-
 /* Footer */
 footer {
     background: #002b5c;
@@ -119,3 +84,4 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+
