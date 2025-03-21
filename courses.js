@@ -28,7 +28,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'Writing and using functions in programming.',
         technology: ['Python'],
-        completed: true
+        completed: false
     },
     {
         subject: 'CSE',
