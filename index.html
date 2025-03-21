@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course Home Page for Web and Computer Programming Certificate">
+    <meta name="author" content="Brent R. Welsford">
+    <title>Course Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/brent.jpg" alt="Profile Picture Of BR Welsford" class="profile-pic">
+        <h1 class="name">Brent R. Welsford</h1>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="https://github.com/Brewe05" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/brent-welsford-a7902a14b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+        <section>
+            <h2>Course Work</h2>
+            <p>List of relevant courses.</p>
+        </section>
+        <section>
+            <h2>Gauteng, South Africa</h2>
+            <img src="images/Mandela_Bridge.jpg" alt="Nelson Mandela Bridge" class="optimized-image">
+        </section>
+        <section>
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="course-buttons">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div class="courses" id="course-list"></div>
+            <p>Total Credits: <span id="total-credits">0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span>  Brent Reginald Welsford - South Africa 🇲🇬</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
