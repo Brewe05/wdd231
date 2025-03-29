@@ -4,14 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (weatherContainer) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=YourCity&appid=YourAPIKey&units=metric")
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.json();
+            })
             .then(data => {
                 weatherContainer.innerHTML = `
                     <p>Weather: ${data.weather[0].description}</p>
                     <p>Temperature: ${data.main.temp}°C</p>
                 `;
             })
-            .catch(error => console.error("Error fetching weather data:", error));
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                weatherContainer.innerHTML = "<p>Unable to load weather data.</p>";
+            });
     }
 
     // Add smooth scrolling for call-to-action buttons
@@ -36,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (toggleButton && memberContainer) {
         toggleButton.addEventListener("click", () => {
+            const isGridView = memberContainer.classList.contains("grid-view");
+            toggleButton.textContent = isGridView ? "Switch to Grid View" : "Switch to List View";
             memberContainer.classList.toggle("grid-view");
             memberContainer.classList.toggle("list-view");
         });
@@ -44,20 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fetch and display member data
 async function fetchMembers() {
-    const response = await fetch("members_chamber.json"); // Corrected file path
-    const members = await response.json();
-    const memberContainer = document.getElementById("members");
+    try {
+        const response = await fetch("members_chamber.json"); // Corrected file path
+        if (!response.ok) throw new Error("Failed to fetch members data");
+        const members = await response.json();
+        const memberContainer = document.getElementById("members");
 
-    if (memberContainer) {
-        memberContainer.innerHTML = members.map(member => `
-            <div class="member">
-                <img src="${member.image}" alt="${member.name}">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p>Membership Level: ${member.membershipLevel}</p>
-            </div>
-        `).join("");
+        if (memberContainer) {
+            memberContainer.innerHTML = members.map(member => `
+                <div class="member">
+                    <img src="${member.image}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p>${member.address}</p>
+                    <p>${member.phone}</p>
+                    <a href="${member.website}" target="_blank">Visit Website</a>
+                    <p>Membership Level: ${member.membershipLevel}</p>
+                </div>
+            `).join("");
+        }
+    } catch (error) {
+        console.error("Error fetching members data:", error);
+        const memberContainer = document.getElementById("members");
+        if (memberContainer) {
+            memberContainer.innerHTML = "<p>Unable to load member data.</p>";
+        }
     }
 }

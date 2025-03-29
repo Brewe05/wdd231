@@ -38,5 +38,21 @@
         "website": "https://businessfive.com",
         "image": "images/business5.jpg",
         "membershipLevel": "Silver"
+    },
+    {
+        "name": "Business Six",
+        "address": "987 Birch St, City, State",
+        "phone": "222-333-4444",
+        "website": "https://businesssix.com",
+        "image": "images/business6.jpg",
+        "membershipLevel": "Bronze"
+    },
+    {
+        "name": "Business Seven",
+        "address": "654 Cedar St, City, State",
+        "phone": "111-222-3333",
+        "website": "https://businessseven.com",
+        "image": "images/business7.jpg",
+        "membershipLevel": "Gold"
     }
 ]

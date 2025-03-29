@@ -5,6 +5,7 @@
     border-radius: 8px;
     text-align: center;
     margin: 1rem 0;
+    color: #333; /* Improved text contrast */
 }
 
 /* Call-to-action buttons */
@@ -16,10 +17,12 @@
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    font-weight: bold; /* Enhance readability */
 }
 
 .cta-button:hover {
     background-color: #0056b3;
+    color: #e0e0e0; /* Improved hover contrast */
 }
 
 /* Responsive design */
@@ -53,10 +56,12 @@
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
+    background-color: #f9f9f9; /* Add background for better readability */
 }
 
 .member img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
+    border: 2px solid #ccc; /* Add border for better visibility */
 }
