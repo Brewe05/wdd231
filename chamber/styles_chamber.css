@@ -5,7 +5,7 @@
     border-radius: 8px;
     text-align: center;
     margin: 1rem 0;
-    color: #333; /* Improved text contrast */
+    color: #222; /* Improved text contrast */
 }
 
 /* Call-to-action buttons */
@@ -16,13 +16,13 @@
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: bold; /* Enhance readability */
 }
 
 .cta-button:hover {
     background-color: #0056b3;
-    color: #e0e0e0; /* Improved hover contrast */
+    color: #f8f9fa; /* Improved hover contrast */
 }
 
 /* Responsive design */
@@ -57,6 +57,7 @@
     border-radius: 8px;
     text-align: center;
     background-color: #f9f9f9; /* Add background for better readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual hierarchy */
 }
 
 .member img {
@@ -64,4 +65,5 @@
     height: auto;
     border-radius: 50%;
     border: 2px solid #ccc; /* Add border for better visibility */
+    margin-bottom: 0.5rem; /* Add spacing below the image */
 }
