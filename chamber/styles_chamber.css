@@ -8,16 +8,35 @@
     color: #222; /* Improved text contrast */
 }
 
+#weather img {
+    max-width: 100px;
+    margin: 0.5rem auto;
+    display: block;
+}
+
+#weather figcaption {
+    font-style: italic;
+    color: #555;
+}
+
 /* Call-to-action buttons */
 .cta-button {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding:0.5rem 1rem;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: bold; /* Enhance readability */
+    font-weight: bold; 
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -moz-transition: background-color 0.3s ease, color 0.3s ease;
+    -ms-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
@@ -66,4 +85,251 @@
     border-radius: 50%;
     border: 2px solid #ccc; /* Add border for better visibility */
     margin-bottom: 0.5rem; /* Add spacing below the image */
+}
+
+.hero {
+    background-image: url('https://images.stockcake.com/public/9/3/0/9304441e-7602-42b9-9f88-50f6efe07453_large/tropical-island-getaway-stockcake.jpg'); /* Replace with your image path */
+    background-repeat: no-repeat; /* Optional: Prevent image from repeating */
+    background-size: cover; /* Optional: Make image cover the entire background */
+    background-position: center; /* Optional: Center the image */
+    color: #fff; /* Text color for better contrast against the background */
+    max-width: 728px;
+    max-height: 480px;
+}
+
+/* Navigation bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a86c5;
+    color: #fff;
+}
+
+header .logo img {
+    max-height: 50px; /* Adjust the height to fit the nav */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 1rem; /* Add spacing between the logo and nav items */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section */
+#hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 0; /* Remove extra padding to ensure full coverage */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Add spacing between elements */
+    z-index: 1; /* Ensure the hero section is above other content */
+    min-height: 60vh; /* Ensure the hero section takes at least the full viewport height */
+    overflow: hidden; /* Prevent content overflow */
+    background-image: url('images/hero_com_1000px.jpg'); /* Default hero image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+#hero .hero-image {
+    display: none; /* Hide the <img> tag since the background image is used */
+}
+
+#hero h2,
+#hero p,
+#hero .cta-button {
+    position: relative; /* Ensure text is positioned above the background image */
+    z-index: 2; /* Higher z-index to display above the background */
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+}
+
+#hero h2 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+#hero p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#hero .cta-button {
+    margin-top: 2rem; /* Add spacing above the button */
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 1024px) {
+    #hero {
+        min-height: 70vh; /* Adjust height for medium screens */
+        background-size: contain; /* Ensure the image fits within the section */
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+}
+
+    #hero .cta-button {
+        margin-top: 0.5rem; /* Adjust spacing for smaller screens */
+    }
+
+@media (max-width: 480px) {
+    #hero {
+        min-height: 20vh; /* Adjust height for very small screens */
+        background-image: url('images/hero_com_600px.jpg'); /* Use smaller hero image */
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    #hero .cta-button {
+        margin-top: 0.3rem; /* Adjust spacing for very small screens */
+    }
+}
+
+/* Featured members */
+#featured-members {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    text-align: center;
+}
+
+#featured-members-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+#featured-members-container .member {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #007bff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Fixed typo in selector */
+}
+
+/* Responsive design for smaller screens */
+
+
+
+
+/* Responsive adjustments for sections */
+@media (min-width: 1200px) {
+    section {
+        padding: 6rem 4rem; /* Increase padding for larger screens */
+    }
+
+    section h2 {
+        font-size: 2.5rem; /* Increase heading size for larger screens */
+    }
+
+    section p {
+        font-size: 1.2rem; /* Increase paragraph size for larger screens */
+    }
+}
+
+/* OpenWeatherMap Test Section */
+main {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+main img {
+    max-width: 100px;
+    margin: 1rem auto;
+    display: block;
+}
+
+main figcaption {
+    font-style: italic;
+    color: #555;
+}
+
+/* Forecast styles */
+.forecast {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.forecast-day {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-day img {
+    max-width: 50px;
+    margin: 0.5rem 0;
+}
+
+.forecast-day h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-day p {
+    margin: 0.2rem 0;
 }

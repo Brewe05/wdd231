@@ -1,36 +1,36 @@
 // Fetch and display weather information
 document.addEventListener("DOMContentLoaded", () => {
-    const weatherContainer = document.getElementById("weather");
+    const weatherContainer = document.getElementById("weather-container");
 
     if (weatherContainer) {
-        const lat = -25.8585; // Latitude for Centurion
-        const lon = 28.1858; // Longitude for Centurion
-        const apiKey = "1320f6e418c59e57106ae132d4aa2136";
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+        const city = "pretoria"; // city name
+        const country = "za"; //  country code
+        const apiKey = "0e7a1e08a489cc95d126c49925fd5d52"; // valid API key
+        const callbackName = "displayWeather"; // Callback function name
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&callback=${callbackName}&appid=${apiKey}`;
 
-        console.log("Fetching weather data from:", url); // Debugging log
-
-        fetch(url)
-            .then(response => {
-                console.log("Response status:", response.status); // Debugging log
-                if (!response.ok) throw new Error("Network response was not ok");
-                return response.json();
-            })
-            .then(data => {
-                console.log("Weather data received:", data); // Debugging log
-                if (data.weather && data.main) {
-                    weatherContainer.innerHTML = `
-                        <p>Weather: ${data.weather[0].description}</p>
-                        <p>Temperature: ${data.main.temp}°C</p>
-                    `;
-                } else {
-                    throw new Error("Incomplete weather data");
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching weather data:", error);
+        // Define the callback function
+        window[callbackName] = function (data) {
+            if (data.weather && data.main) {
+                weatherContainer.innerHTML = `
+                    <p>Weather: ${data.weather[0].description}</p>
+                    <p>Temperature: ${(data.main.temp - 273.15).toFixed(2)}°C</p> <!-- Convert Kelvin to Celsius -->
+                    <p>Humidity: ${data.main.humidity}%</p>
+                    <p>Wind Speed: ${data.wind.speed} m/s</p>
+                `;
+            } else {
                 weatherContainer.innerHTML = "<p>Unable to load weather data.</p>";
-            });
+            }
+        };
+
+        //  fetch the JSONP data
+        const script = document.createElement("script");
+        script.src = url;
+        script.onerror = () => {
+            console.error("Error loading weather data.");
+            weatherContainer.innerHTML = "<p>Unable to load weather data.</p>";
+        };
+        document.body.appendChild(script);
     }
 
     // Add smooth scrolling for call-to-action buttons
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Fetch and display member data
 async function fetchMembers() {
     try {
-        const response = await fetch("members_chamber.json"); // Corrected file path
+        const response = await fetch("members_chamber.json");
         if (!response.ok) throw new Error("Failed to fetch members data");
         const members = await response.json();
         const memberContainer = document.getElementById("members");
@@ -78,7 +78,7 @@ async function fetchMembers() {
                     <h3>${member.name}</h3>
                     <p>${member.address}</p>
                     <p>${member.phone}</p>
-                    <a href="${member.website}" target="_blank">Visit Website</a>
+                    <a href="${member.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>
                     <p>Membership Level: ${member.membershipLevel}</p>
                 </div>
             `).join("");
@@ -91,3 +91,37 @@ async function fetchMembers() {
         }
     }
 }
+
+// Fetch and display featured members
+async function fetchFeaturedMembers() {
+    try {
+        const response = await fetch("members_chamber.json");
+        if (!response.ok) throw new Error("Failed to fetch members data");
+        const members = await response.json();
+        const featuredContainer = document.getElementById("featured-members-container");
+
+        if (featuredContainer) {
+            const featuredMembers = members.filter(member => member.membershipLevel === "Gold");
+            featuredContainer.innerHTML = featuredMembers.map(member => `
+                <div class="member">
+                    <img src="${member.image}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p>${member.address}</p>
+                    <a href="${member.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+            `).join("");
+        }
+    } catch (error) {
+        console.error("Error fetching featured members:", error);
+        const featuredContainer = document.getElementById("featured-members-container");
+        if (featuredContainer) {
+            featuredContainer.innerHTML = "<p>Unable to load featured members.</p>";
+        }
+    }
+}
+
+// Call the functions to load members and featured members
+document.addEventListener("DOMContentLoaded", () => {
+    fetchMembers();
+    fetchFeaturedMembers();
+});

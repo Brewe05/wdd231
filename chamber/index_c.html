@@ -15,8 +15,6 @@
     <meta property="og:image" content="images/profile.jpg">
     <meta property="og:url" content="https://brewe05.github.io/wdd231/">
     <link rel="stylesheet" href="styles_chamber.css">
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts_chamber.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,7 +23,7 @@
         </div>
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -65,28 +63,10 @@
 
         <section id="weather">
             <h2>Current Weather</h2>
-            <h3>The current temperature in Pretoria, South Africa is </h3>
             <div id="weather-container">
-                <p>The current temperature is <span id="current-temp"></span></p>
-                <figure>
-                    <img id="weather-icon" src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-            </div>
-            <div id="forecast-container" class="forecast">
-                <!-- 3-day forecast will be dynamically inserted here -->
+                <p>Loading weather data...</p> <!-- Fallback message -->
             </div>
         </section>
-
-        <main>
-            <figure>
-                <img id="weather-icon" src="" alt="">
-                <figcaption></figcaption>
-            </figure>
-        </main>
-        <footer>
-            Brent Welsford | OpenWeatherMap.org | CC BY-SA 4.0
-        </footer>
 
         <section id="members-section" aria-labelledby="members-heading">
             <h2 id="members-heading">Our Members</h2>
