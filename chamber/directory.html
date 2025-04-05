@@ -15,34 +15,21 @@
     <meta property="og:image" content="images/profile.jpg">
     <meta property="og:url" content="https://brewe05.github.io/wdd231/">
     <link rel="stylesheet" href="styles_chamber.css">
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts_chamber.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo_comm.png" alt="Brent Chamber of Commerce Logo">
-        </div>
+        <h1>Welcome to the Chamber of Commerce</h1>
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="../index_corse_home.html">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#members-section">Members</a></li>
-                <li><a href="#featured-members">Featured</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <img src="images/hero_com_1000px.jpg" alt="Chamber of Commerce Hero Image" class="hero-image">
-            <h2>Making Business Work For You</h2>
-            <p>Join the Brent Welsford Chamber of Commerce and connect with a thriving business community.</p>
-            <a href="#join" class="cta-button">Join Now</a>
-        </section>
-
         <section id="home">
             <h2>Home</h2>
             <p>Welcome to our Chamber of Commerce website. We are dedicated to supporting local businesses and fostering economic growth in our community.</p>
@@ -65,22 +52,8 @@
 
         <section id="weather">
             <h2>Current Weather</h2>
-            <h3>The current temperature in Pretoria, South Africa is:</h3>
-            <div id="weather-container">
-                <p>The current temperature is <span id="current-temp"></span></p>
-                <figure>
-                    <img id="weather-icon" src="placeholder.png" alt="Weather icon">
-                    <figcaption></figcaption>
-                </figure>
-            </div>
-            <div id="forecast-container" class="forecast">
-                <!-- 3-day forecast will be dynamically inserted here -->
-            </div>
+            <p>Loading weather data...</p> <!-- Fallback message -->
         </section>
-
-        <footer>
-            Brent Welsford | OpenWeatherMap.org | CC BY-SA 4.0
-        </footer>
 
         <section id="members-section" aria-labelledby="members-heading">
             <h2 id="members-heading">Our Members</h2>
@@ -95,27 +68,10 @@
             <a href="#join" class="cta-button">Join Us</a>
             <a href="#directory" class="cta-button">Explore Directory</a>
         </section>
-
-        <section id="featured-members">
-            <h2>Featured Members</h2>
-            <div id="featured-members-container">
-                <!-- Featured members will be dynamically inserted here -->
-            </div>
-        </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#contact">Contact Us</a>
-        </div>
-        <div class="social-media">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-        <p>&copy; 2025 Carlsbad Chamber of Commerce. All rights reserved.</p>
+        <p>&copy; 2025 Chamber of Commerce. All rights reserved.</p>
     </footer>
 </body>
 </html>
