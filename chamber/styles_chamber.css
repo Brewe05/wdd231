@@ -270,8 +270,79 @@ footer {
 
 /* Responsive design for smaller screens */
 
+/* Membership cards */
+.card-container {
+    display: grid; /* Revert to grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cards displayed in a grid */
+    gap: 1.5rem; /* Add spacing between cards */
+    margin: 2rem 0; /* Add spacing above and below the container */
+}
 
+.card {
+    text-align: center; /* Center text inside the card */
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start slightly below */
+    animation: fadeInUp 1s ease-out forwards; /* Animate on load */
+}
 
+.card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s; /* Delay for the first card */
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s; /* Delay for the second card */
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s; /* Delay for the third card */
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.8s; /* Delay for the fourth card */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Display cards in a single column */
+    }
+}
 
 /* Responsive adjustments for sections */
 @media (min-width: 1200px) {
@@ -332,4 +403,12 @@ main figcaption {
 
 .forecast-day p {
     margin: 0.2rem 0;
+}
+
+/* Join form animation */
+#join-form {
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start slightly below */
+    animation: fadeInUp 1s ease-out forwards; /* Animate on load */
+    animation-delay: 0.5s; /* Delay for the join form */
 }
