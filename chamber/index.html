@@ -40,7 +40,7 @@
             <img src="images/hero_com_1000px.jpg" alt="Chamber of Commerce Hero Image" class="hero-image">
             <h2>Making Business Work For You</h2>
             <p>Join the Brent Welsford Chamber of Commerce and connect with a thriving business community.</p>
-            <a href="join.html" class="cta-button">Join Now</a>
+            <a href="join.html" class="cta-button" onclick="fadeToJoinPage();">Join Now</a>
         </section>
 
         <section id="home">
@@ -87,7 +87,7 @@
 
         <section id="cta">
             <h2>Get Involved</h2>
-            <a href="join.html" class="cta-button">Join Us</a>
+            <a href="join.html" class="cta-button" onclick="fadeToJoinPage();">Join Us</a>
             <a href="directory.html" class="cta-button">Explore Directory</a>
         </section>
 
@@ -112,5 +112,14 @@
         </div>
         <p>&copy; 2025 Brent Chamber of Commerce. All rights reserved.</p>
     </footer>
+
+    <script>
+        function fadeToJoinPage() {
+            document.body.classList.add('fade');
+            setTimeout(() => {
+                window.location.href = 'join.html';
+            }, 1000); // Adjust timeout to match CSS animation duration
+        }
+    </script>
 </body>
 </html>
