@@ -36,6 +36,15 @@
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
                 <h1 style="font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">Thank You</h1>
                 <p style="font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">We appreciate your membership!</p>
+                <p style="font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
+                    Thank you, <span id="first-name"></span> <span id="last-name"></span>, for joining the Chamber of Commerce!
+                </p>
+                <p style="font-size: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
+                    Email: <span id="email"></span><br>
+                    Phone: <span id="phone"></span><br>
+                    Organization: <span id="organization"></span><br>
+                    Submitted on: <span id="timestamp"></span>
+                </p>
             </div>
         </section>
     </main>
@@ -53,5 +62,15 @@
         </div>
         <p>&copy; 2025 Brent Chamber of Commerce. All rights reserved.</p>
     </footer>
+    <script>
+        // Populate thank you page with form data
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("first-name").textContent = urlParams.get("first-name");
+        document.getElementById("last-name").textContent = urlParams.get("last-name");
+        document.getElementById("email").textContent = urlParams.get("email");
+        document.getElementById("phone").textContent = urlParams.get("mobile-phone");
+        document.getElementById("organization").textContent = urlParams.get("organization");
+        document.getElementById("timestamp").textContent = urlParams.get("timestamp");
+    </script>
 </body>
 </html>

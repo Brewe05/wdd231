@@ -10,4 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     membershipCards.forEach((card, index) => {
         card.style.animationPlayState = "running"; // Start card animations
     });
+
+    // Populate the hidden timestamp field
+    const timestampField = document.getElementById("timestamp");
+    if (timestampField) {
+        const now = new Date();
+        timestampField.value = now.toISOString();
+    }
 });
