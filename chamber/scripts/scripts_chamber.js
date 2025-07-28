@@ -1,4 +1,3 @@
-// Fetch and display weather information
 document.addEventListener("DOMContentLoaded", () => {
     const weatherContainer = document.getElementById("weather-container");
 
@@ -9,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const callbackName = "displayWeather"; // Callback function name
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&callback=${callbackName}&appid=${apiKey}`;
 
-        // Define the callback function
         window[callbackName] = function (data) {
             if (data.weather && data.main) {
                 weatherContainer.innerHTML = `
@@ -23,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        //  fetch the JSONP data
         const script = document.createElement("script");
         script.src = url;
         script.onerror = () => {
@@ -33,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(script);
     }
 
-    // Add smooth scrolling for call-to-action buttons
     const ctaButtons = document.querySelectorAll(".cta-button");
     ctaButtons.forEach(button => {
         button.addEventListener("click", (event) => {
@@ -46,10 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Fetch and display member data
     fetchMembers();
 
-    // Toggle between grid and list views
     const toggleButton = document.getElementById("toggle-view");
     const memberContainer = document.getElementById("members");
 
@@ -63,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Fetch and display member data
 async function fetchMembers() {
     try {
         const response = await fetch("members_chamber.json");
@@ -92,7 +85,6 @@ async function fetchMembers() {
     }
 }
 
-// Fetch and display featured members
 async function fetchFeaturedMembers() {
     try {
         const response = await fetch("members_chamber.json");
@@ -120,7 +112,6 @@ async function fetchFeaturedMembers() {
     }
 }
 
-// Call the functions to load members and featured members
 document.addEventListener("DOMContentLoaded", () => {
     fetchMembers();
     fetchFeaturedMembers();

@@ -5,7 +5,6 @@ const forecastContainer = document.getElementById("forecast-container");
 const currentWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=-25.870212221731688&lon=28.220492243469586&units=metric&appid=0e7a1e08a489cc95d126c49925fd5d52";
 const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=-25.870212221731688&lon=28.220492243469586&units=metric&appid=0e7a1e08a489cc95d126c49925fd5d52";
 
-//weather
 async function fetchCurrentWeather() {
     try {
         const response = await fetch(currentWeatherUrl);
@@ -37,16 +36,16 @@ async function fetchForecast() {
 }
 
 function displayCurrentWeather(data) {
-    currentTemp.innerHTML = `${data.main.temp}&deg;C`; // Display temperature
-    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`; // Icon URL
-    let desc = data.weather[0].description; // Weather description
-    weatherIcon.setAttribute("src", iconsrc); // Set icon source
-    weatherIcon.setAttribute("alt", desc); // Set alt text for accessibility
-    captionDesc.textContent = `${desc}`; // Display description
+    currentTemp.innerHTML = `${data.main.temp}&deg;C`;
+    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    let desc = data.weather[0].description;
+    weatherIcon.setAttribute("src", iconsrc);
+    weatherIcon.setAttribute("alt", desc);
+    captionDesc.textContent = `${desc}`;
 }
 
 function displayForecast(data) {
-    const forecastDays = data.list.filter((item) => item.dt_txt.includes("12:00:00")).slice(0, 3); // Get 3 days at noon
+    const forecastDays = data.list.filter((item) => item.dt_txt.includes("12:00:00")).slice(0, 3);
     forecastContainer.innerHTML = forecastDays.map((day) => {
         const date = new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "long" });
         const temp = day.main.temp;
