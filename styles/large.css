@@ -118,30 +118,7 @@ footer {
     background-color: #0056b3;
 }
 
-@media screen and (max-width: 600px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: black;
-        text-align: center;
-    }
 
-    nav ul.active {
-        display: flex;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-}
 
 @media screen and (max-width: 768px) {
     header {

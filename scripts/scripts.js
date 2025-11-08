@@ -2,17 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
     displayCourses(courses);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const eventsSection = document.getElementById("events");
-    if (eventsSection) {
-        const events = [
-            { name: "Business Networking Breakfast", date: "March 15" },
-            { name: "Annual Gala", date: "April 20" },
-            { name: "Small Business Expo", date: "May 10" }
-        ];
+function toggleMenu() {
+    const navMenu = document.getElementById("nav-menu");
+    if (!navMenu) return;
+        navMenu.classList.toggle("active");
+}
 
-        const eventsList = events.map(event => `<li>${event.name} - ${event.date}</li>`).join("");
-        eventsSection.innerHTML += `<ul>${eventsList}</ul>`;
+document.addEventListener("click", (e) => {
+    const navMenu = document.getElementById("nav-menu");
+    const menuIcon = document.querySelector(".menu-icon");
+    if (!navMenu || !menuIcon) return;
+        if (menuIcon.contains(e.target)) return;
+        if (!navMenu.contains(e.target) && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+    }
+});
+
+window.addEventListener("resize", () => {
+    const navMenu = document.getElementById("nav-menu");
+    if (!navMenu) return;
+    if (window.innerWidth > 600 && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
     }
 });
 
