@@ -85,3 +85,41 @@ footer { background: #222;
     text-align: center;
     font-size: 0.9rem;
 }
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.hero-overlay h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.hero-overlay p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.directory-controls {
+    text-align: center;
+    padding: 2rem 1rem;
+}
