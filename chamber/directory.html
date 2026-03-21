@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Directory | Pretoria Chamber of Commerce</title>
-    <meta name="description" content="Discover and connect with local businesses in Pretoria through our comprehensive Chamber of Commerce member directory.">
+    <meta name="description" content="Explore the Pretoria Chamber of Commerce business directory. Support local businesses and connect with our community partners.">
     <meta name="author" content="Brent Welsford">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <meta property="og:title" content="Pretoria Chamber of Commerce Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://brewe05.github.io/wdd231/chamber/images/social-share.jpg">
+    <meta property="og:image" content="https://brewe05.github.io/wdd231/chamber/images/hero-social.jpg">
     <meta property="og:url" content="https://brewe05.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Support local business and explore our community partners.">
+    <meta property="og:description" content="Discover and support local businesses in our community directory.">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
@@ -27,7 +30,7 @@
             </div>
         </div>
         <nav>
-            <button id="menu-button">☰</button>
+            <button id="menu-button" aria-label="Toggle Menu">☰</button>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html" class="active">Directory</a></li>
@@ -36,11 +39,10 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <div class="directory-header">
+        <div class="directory-controls">
             <h2>Member Directory</h2>
-            <div class="toggle-container">
+            <div class="toggle-buttons">
                 <button id="grid-view-btn">Grid View</button>
                 <button id="list-view-btn">List View</button>
             </div>
@@ -48,15 +50,19 @@
         <article id="member-container" class="grid"></article>
     </main>
     <footer>
-        <div class="footer-top">
-            <img src="images/logo.png" alt="Footer Logo">
-            <div class="contact-info">
-                <p>123 Chamber Plaza, Pretoria, ZA</p>
+        <div class="footer-content">
+            <div class="contact-box">
+                <p><strong>Pretoria Chamber of Commerce</strong></p>
+                <p>123 Innovation Street</p>
+                <p>Pretoria, South Africa</p>
                 <p>info@pretoriachamber.org</p>
-                <p>+27 12 345 6789</p>
+                <p>+(27) 12 555 0123</p>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a> | <a href="#">LinkedIn</a>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-info">
             <p>&copy; <span id="currentYear"></span> Brent Welsford | WDD 231</p>
             <p id="lastModified"></p>
         </div>
