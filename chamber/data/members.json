@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Tech Solutions Ltd",
+    "address": "123 Innovation Way, Pretoria",
+    "phone": "012-555-0101",
+    "website": "https://solarsite.co.za",
+    "image": "images/tech-logo.png",
+    "level": 3,
+    "other": "Specializing in Cloud Infrastructure"
+  },
+  {
+    "name": "Green Garden Nursery",
+    "address": "45 Botany Lane, Pretoria",
+    "phone": "012-555-0202",
+    "website": "https://solarsite.co.za",
+    "image": "images/garden-logo.png",
+    "level": 2,
+    "other": "Organic fertilizers and rare plants"
+  },
+  {
+    "name": "Urban Cafe",
+    "address": "88 Central Ave, Pretoria",
+    "phone": "012-555-0303",
+    "website": "https://solarsite.co.za",
+    "image": "images/cafe-logo.png",
+    "level": 1,
+    "other": "Best coffee in the city"
+  }
+]

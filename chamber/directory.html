@@ -3,77 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce Directory</title>
-    <meta name="description" content="Explore the Chamber of Commerce directory to discover local businesses and services in your community.">
+    <title>Member Directory | Pretoria Chamber of Commerce</title>
+    <meta name="description" content="Discover and connect with local businesses in Pretoria through our comprehensive Chamber of Commerce member directory.">
     <meta name="author" content="Brent Welsford">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <meta property="og:title" content="Chamber of Commerce Directory">
+    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Pretoria Chamber of Commerce Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/hero_com_600px.jpg">
-    <meta property="og:url" content="https://brewe05.github.io/wdd231/">
-    <link rel="stylesheet" href="styles/large.css">
+    <meta property="og:image" content="https://brewe05.github.io/wdd231/chamber/images/social-share.jpg">
+    <meta property="og:url" content="https://brewe05.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Support local business and explore our community partners.">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
     <script src="scripts/chamber.js" defer></script>
-
 </head>
 <body>
     <header>
-        <img src="images/hero_com_600px.jpg" alt="Chamber of Commerce Hero Image">
-        <h1>Welcome to the Chamber of Commerce</h1>
-        <nav aria-label="Main navigation">
-            <ul>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Pretoria Chamber Logo" class="logo">
+            <div class="title-area">
+                <h1>Pretoria Chamber</h1>
+                <p>Economic Growth & Community</p>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button">☰</button>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="chamber/directory.html">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#join">Join</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>Welcome to our Chamber of Commerce website. We are dedicated to supporting local businesses and fostering economic growth in our community.</p>
-        </section>
-
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Learn more about our mission, vision, and the team behind the Chamber of Commerce.</p>
-        </section>
-
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Discover the range of services we offer to help businesses thrive.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with us for any inquiries or support.</p>
-        </section>
-
-        <section id="weather-container"> <!-- changed from id="weather" -->
-            <h2>Current Weather</h2>
-            <p>Loading weather data...</p>
-        </section>
-
-        <section id="members-section" aria-labelledby="members-heading">
-            <h2 id="members-heading">Our Members</h2>
-            <button id="toggle-view" aria-controls="members">Toggle View</button>
-            <div id="members" class="grid-view">
+        <div class="directory-header">
+            <h2>Member Directory</h2>
+            <div class="toggle-container">
+                <button id="grid-view-btn">Grid View</button>
+                <button id="list-view-btn">List View</button>
             </div>
-        </section>
-
-        <section id="cta">
-            <h2>Get Involved</h2>
-            <a href="join.html" class="cta-button">Join Us</a>
-            <a href="directory.html" class="cta-button">Explore Directory</a>
-        </section>
+        </div>
+        <article id="member-container" class="grid"></article>
     </main>
-
     <footer>
-        <p>&copy; 2025 Brent Chamber of Commerce. All rights reserved.</p>
+        <div class="footer-top">
+            <img src="images/logo.png" alt="Footer Logo">
+            <div class="contact-info">
+                <p>123 Chamber Plaza, Pretoria, ZA</p>
+                <p>info@pretoriachamber.org</p>
+                <p>+27 12 345 6789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Brent Welsford | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 </body>
 </html>

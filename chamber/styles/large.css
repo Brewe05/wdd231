@@ -1,0 +1,16 @@
+@media screen and (min-width: 600px) {
+    #menu-button { display: none; }
+    #nav-menu { display: flex; justify-content: center; }
+    #nav-menu li { border: none; }
+
+    #member-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
