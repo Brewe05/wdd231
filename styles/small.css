@@ -3,15 +3,14 @@ body {
     font-size: 1rem;
 }
 
-header {
-    position: relative;
-    display: grid;
-    grid-template-columns: 70px 1fr 45px;
-    align-items: center;
-    gap: 1rem;
-    min-height: 90px;
-    padding: 1rem;
-}
+    header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 90px;
+        padding: 1rem;
+    }
 
 .personal-image {
     width: 65px;
