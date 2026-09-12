@@ -91,6 +91,7 @@ function displayCourses(filteredCourses) {
         courseDiv.innerHTML = `<strong>${course.subject} ${course.number}: ${course.title}</strong> 
                                <p>${course.description}</p>
                                <p><strong>Credits:</strong> ${course.credits}</p>
+                               <p><strong>Completed:</strong> ${course.completed ? "Yes" : "No"}</p>
                                <p><strong>Technology:</strong> ${course.technology.join(", ")}</p>`;
         courseList.appendChild(courseDiv);
     });
@@ -108,8 +109,17 @@ function filterCourses(category) {
 }
 
 function updateTotalCredits(selectedCourses) {
-    const totalCredits = selectedCourses.reduce((sum, course) => sum + course.credits, 0);
+    const totalCredits = selectedCourses.reduce(
+        (sum, course) => sum + course.credits,
+        0
+    );
+
+    const creditsEarned = selectedCourses
+        .filter(course => course.completed === true)
+        .reduce((sum, course) => sum + course.credits, 0);
+
     document.getElementById("total-credits").textContent = totalCredits;
+    document.getElementById("credits-earned").textContent = creditsEarned;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

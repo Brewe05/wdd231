@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('nav-open', open);
         };
 
-        setMenu(window.innerWidth > 768);
+        setMenu(window.innerWidth >= 768);
         btn.addEventListener('click', () => setMenu(!(btn.getAttribute('aria-expanded') === 'true')));
         document.addEventListener('click', (e) => {
-        if (window.innerWidth > 768) return;
+        if (window.innerWidth >= 768) return;
         if (!btn.contains(e.target) && !menu.contains(e.target)) setMenu(false);
         });
 
-        window.addEventListener('resize', () => setMenu(window.innerWidth > 768));
+        window.addEventListener('resize', () => setMenu(window.innerWidth >= 768));
         window.toggleMenu = () => setMenu(!(btn.getAttribute('aria-expanded') === 'true'));
     }
 

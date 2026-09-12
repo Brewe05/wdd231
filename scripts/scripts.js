@@ -21,18 +21,8 @@ document.addEventListener("click", (e) => {
 window.addEventListener("resize", () => {
     const navMenu = document.getElementById("nav-menu");
     if (!navMenu) return;
-    if (window.innerWidth > 600 && navMenu.classList.contains("active")) {
+    if (window.innerWidth >= 768 && navMenu.classList.contains("active")) {
         navMenu.classList.remove("active");
+
     }
 });
-
-//Footer
-const yearElement = document.getElementById("year");
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
-
-const lastModifiedElement = document.getElementById("lastModified");
-if (lastModifiedElement) {
-    lastModifiedElement.textContent = "Last Update: " + document.lastModified;
-}

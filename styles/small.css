@@ -1,0 +1,125 @@
+@media (min-width: 320px) {
+body {
+    font-size: 1rem;
+}
+
+header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 70px 1fr 45px;
+    align-items: center;
+    gap: 1rem;
+    min-height: 90px;
+    padding: 1rem;
+}
+
+.personal-image {
+    width: 65px;
+    height: 65px;
+    border: 3px solid #d4a72c;
+}
+
+.name {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.menu-icon:hover,
+.menu-icon:focus-visible {
+    background-color: #d4a72c;
+    color: #102a43;
+}
+
+nav {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+}
+
+nav ul.open {
+    display: flex;
+}
+
+nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+    padding: 0.9rem 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1.5rem 1rem 2rem;
+}
+
+main > h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+section p {
+    color: #52606d;
+}
+
+.optimized-image {
+    max-height: 300px;
+}
+
+.course_buttons {
+    margin-bottom: 1.25rem;
+}
+
+.filter-btn {
+    flex: 1 1 70px;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+}
+
+.courses {
+    grid-template-columns: 1fr;
+    margin-bottom: 1.25rem;
+}
+
+.course {
+    padding: 1rem;
+}
+
+.course h3 {
+    font-size: 1.05rem;
+}
+
+footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+}
