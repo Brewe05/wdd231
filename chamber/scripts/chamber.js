@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         members.forEach(member => {
             const section = document.createElement("section");
             section.className = "member-card";
-            const levels = ["", "Member", "Silver", "Gold"];
+            const levels = ["", "Bronze", "Silver", "Gold"];
             const levelLabel = levels[member.level] || "Member";
             section.innerHTML = `
                 <img src="${member.image}" alt="${member.name} logo" loading="lazy">
@@ -53,4 +53,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    getMembers();
 });
