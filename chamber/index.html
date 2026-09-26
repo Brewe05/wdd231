@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Brent Welsford Chamber of Commerce</title>
+    <meta name="description" content="Welcome to the Brent Welsford Chamber of Commerce. Discover local Pretoria businesses, upcoming events, and weather updates.">
+    <meta name="author" content="Brent Welsford">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Home | Brent Welsford Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://brewe05.github.io/wdd231/chamber/images/hero.jpg">
+    <meta property="og:url" content="https://brewe05.github.io/wdd231/chamber/index.html">
+    <meta property="og:description" content="Connecting businesses and driving economic growth in Pretoria.">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Brent Welsford Chamber of commerce" class="logo">
+            <div class="title-area">
+                <h1>Brent Welsford Chamber Of Commerce</h1>
+                <p>Economic Growth & Community</p>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button" aria-label="Toggle Menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-main">
+        <!-- Hero Section with img tag -->
+        <div id="hero-container">
+            <img src="images/hero.jpg" alt="Pretoria Skyline Hero Banner" class="hero-img">
+            <div class="hero-overlay">
+                <h2>Empowering Pretoria's Businesses</h2>
+                <p>Join our thriving network of local business leaders today.</p>
+                <a href="join.html" class="cta-btn">Join the Chamber</a>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="home-content-grid">
+            <!-- Events Section -->
+            <section class="card events-section">
+                <h2>Current Events</h2>
+                <article class="event-card">
+                    <h3>Annual Business Expo 2026</h3>
+                    <p><strong>Date:</strong> October 15, 2026</p>
+                    <p>Network with over 100 local suppliers and service providers at the Pretoria Convention Centre.</p>
+                </article>
+                <article class="event-card">
+                    <h3>Leadership & Innovation Seminar</h3>
+                    <p><strong>Date:</strong> November 3, 2026</p>
+                    <p>Keynote speakers discuss small business scaling strategies and modern tech integration.</p>
+                </article>
+            </section>
+
+            <!-- Weather Section -->
+            <section class="card weather-section">
+                <h2>Local Weather</h2>
+                <div id="weather-current">
+                    <p>Loading weather data...</p>
+                </div>
+                <h3>3-Day Forecast</h3>
+                <div id="weather-forecast" class="forecast-container">
+                    <p>Loading forecast...</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Company Spotlights Section -->
+        <section class="spotlight-section">
+            <h2>Member Spotlights</h2>
+            <div id="spotlight-container" class="spotlight-grid">
+                <!-- Dynamically loaded spotlight cards via JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-box">
+                <p><strong>Brent Welsford Chamber of Commerce</strong></p>
+                <p>123 Innovation Street</p>
+                <p>Pretoria, South Africa</p>
+                <p>info@BWachamber.org</p>
+                <p>+(27) 72 527 3575</p>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a> | <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="currentYear"></span> Brent Welsford | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
