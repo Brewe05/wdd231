@@ -139,10 +139,10 @@ nav {
     gap: 1.5rem;
 }
 
-.btn {
+.join-form input.btn{
     display: inline-block;
     background-color: #0b3954;
-    color: #ffffff !important;
+    color: #ffffff;
     border: 2px solid #0b3954;
     border-radius: 4px;
     padding: 0.6rem 1.2rem;
@@ -150,7 +150,6 @@ nav {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-    -webkit-appearance: none;
     appearance: none;
     transition: all 0.2s ease;
 }
@@ -385,7 +384,7 @@ footer {
 
 .join-form input,
 .join-form select,
-.join-form textarea {
+.join-form input{
     border: 1px solid #d8e0e8;
     border-radius: 4px;
     padding: 0.6rem 0.75rem;
