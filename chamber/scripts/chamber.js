@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
         menuBtn.addEventListener("click", () => navMenu.classList.toggle("open"));
     }
 
+    const timestampField = document.getElementById("timestamp");
+    if (timestampField) {
+        timestampField.value = new Date().toLocaleString();
+    }
+
     const spotlightContainer = document.getElementById("spotlight-container");
     if (spotlightContainer) {
         getSpotlights();
@@ -22,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const members = await response.json();
             const qualifiedMembers = members.filter(member => member.level === 2 || member.level === 3);
             const shuffled = qualifiedMembers.sort(() => 0.5 - Math.random());
-            const selectedCount = Math.floor(Math.random() * 2) + 2; 
+            const selectedCount = Math.floor(Math.random() * 2) + 2;
             const selectedMembers = shuffled.slice(0, selectedCount);
 
             displaySpotlights(selectedMembers);
@@ -83,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const section = document.createElement("section");
             section.className = "member-card";
             const levelLabel = levels[member.level] || "Member";
-            
+
             section.innerHTML = `
                 <img src="${member.image}" alt="${member.name} logo" loading="lazy">
                 <div class="member-details">
@@ -112,5 +117,29 @@ document.addEventListener("DOMContentLoaded", () => {
             listBtn.classList.add("active-view");
             gridBtn.classList.remove("active-view");
         });
+    }
+
+    const modalLinks = document.querySelectorAll(".modal-link");
+    modalLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const modal = document.getElementById(link.dataset.modal);
+            if (modal) modal.showModal();
+        });
+    });
+
+    document.querySelectorAll(".close-modal").forEach(btn => {
+        btn.addEventListener("click", () => btn.closest("dialog").close());
+    });
+
+    const submissionDetails = document.getElementById("submission-details");
+    if (submissionDetails) {
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("out-firstname").textContent = params.get("firstname") || "N/A";
+        document.getElementById("out-lastname").textContent = params.get("lastname") || "N/A";
+        document.getElementById("out-email").textContent = params.get("email") || "N/A";
+        document.getElementById("out-phone").textContent = params.get("phone") || "N/A";
+        document.getElementById("out-business").textContent = params.get("business") || "N/A";
+        document.getElementById("out-timestamp").textContent = params.get("timestamp") || "N/A";
     }
 });

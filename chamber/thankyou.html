@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Brent Welsford Chamber of Commerce</title>
+    <meta name="description" content="Thank you for joining the Brent Welsford Chamber of Commerce. Review your submitted membership information.">
+    <meta name="author" content="Brent Welsford">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Thank You | Brent Welsford Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://brewe05.github.io/wdd231/chamber/images/hero.jpg">
+    <meta property="og:url" content="https://brewe05.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:description" content="Your Brent Welsford Chamber of Commerce membership application has been received.">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/chamber.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Brent Welsford Chamber of Commerce" class="logo">
+            <div class="title-area">
+                <h2>Brent Welsford Chamber Of Commerce</h2>
+                <p>Economic Growth &amp; Community</p>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button" aria-label="Toggle Menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="thankyou-main">
+        <h1>Thank You for Joining!</h1>
+        <p>Your membership application has been received. Here is the information you submitted:</p>
+        <div id="submission-details" class="submission-details">
+            <p><strong>First Name:</strong> <span id="out-firstname"></span></p>
+            <p><strong>Last Name:</strong> <span id="out-lastname"></span></p>
+            <p><strong>Email:</strong> <span id="out-email"></span></p>
+            <p><strong>Mobile Phone:</strong> <span id="out-phone"></span></p>
+            <p><strong>Business/Organization:</strong> <span id="out-business"></span></p>
+            <p><strong>Submitted:</strong> <span id="out-timestamp"></span></p>
+        </div>
+        <a href="index.html" class="cta-btn">Return to Home</a>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-box">
+                <p><strong>Brent Welsford Chamber of Commerce</strong></p>
+                <p>123 Innovation Street</p>
+                <p>Pretoria, South Africa</p>
+                <p>info@BWachamber.org</p>
+                <p>+(27) 72 527 3575</p>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a> | <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="currentYear"></span> Brent Welsford | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
