@@ -5,9 +5,18 @@
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
-    padding: 0;
     color: #18324b;
     background-color: #f4f6f8;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0b3954;
+    margin: 0 0 0.5rem;
+}
+
+a {
+    color: #b45309;
 }
 
 header {
@@ -29,10 +38,8 @@ header {
     height: auto;
 }
 
-.title-area h1,
 .title-area h2 {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
+    color: #ffffff;
     font-size: 1.2rem;
 }
 
@@ -44,7 +51,6 @@ header {
 
 nav {
     background-color: #18324b;
-    position: relative;
 }
 
 #menu-button {
@@ -70,7 +76,7 @@ nav {
     display: flex;
 }
 
-#nav-menu li a {
+#nav-menu a {
     display: block;
     color: #ffffff;
     text-decoration: none;
@@ -78,8 +84,8 @@ nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#nav-menu li a:hover,
-#nav-menu li a.active {
+#nav-menu a:hover,
+#nav-menu a.active {
     background-color: #f4a261;
     color: #18324b;
     font-weight: 600;
@@ -108,9 +114,9 @@ nav {
     padding: 1.5rem 1rem 1rem;
 }
 
+.hero-overlay h1,
 .hero-overlay h2 {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
     font-size: 1.3rem;
 }
 
@@ -119,36 +125,7 @@ nav {
     font-size: 0.9rem;
 }
 
-.cta-btn {
-    display: inline-block;
-    background-color: #f4a261;
-    color: #18324b;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    font-weight: 700;
-    transition: background-color 0.2s ease;
-}
-
-.cta-btn:hover {
-    background-color: #e76f51;
-    color: #ffffff;
-}
-
-.home-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.home-content-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.card {
+.box {
     background-color: #ffffff;
     border: 1px solid #d8e0e8;
     border-radius: 8px;
@@ -156,13 +133,39 @@ nav {
     box-shadow: 0 2px 5px rgba(24, 50, 75, 0.08);
 }
 
-.card h2 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0;
-    margin-bottom: 1rem;
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0b3954;
+    color: #ffffff !important;
+    border: 2px solid #0b3954;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: all 0.2s ease;
+}
+
+.btn:hover,
+.btn.active {
+    background-color: #f4a261;
+    border-color: #f4a261;
+    color: #18324b;
+}
+
+.card {
     border-bottom: 2px solid #f4a261;
     padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .event-card {
@@ -175,10 +178,12 @@ nav {
 
 .event-card h3 {
     margin: 0 0 0.25rem;
-    color: #0b3954;
 }
 
-.event-card p {
+.event-card p,
+.spotlight-card p,
+.member-card p,
+.membership-card p {
     margin: 0.25rem 0;
     font-size: 0.9rem;
 }
@@ -193,7 +198,6 @@ nav {
 .weather-info h3 {
     margin: 0;
     font-size: 1.8rem;
-    color: #0b3954;
 }
 
 .weather-info p {
@@ -216,53 +220,22 @@ nav {
     font-size: 0.9rem;
 }
 
-.spotlight-section {
-    margin-bottom: 2rem;
-}
-
-.spotlight-section h2 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.spotlight-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.spotlight-card {
-    background-color: #ffffff;
-    border: 1px solid #d8e0e8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 5px rgba(24, 50, 75, 0.08);
+.spotlight-card,
+.member-card,
+.membership-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: relative;
 }
 
-.spotlight-card img {
+.spotlight-card img,
+.member-card img {
     width: 100%;
     max-width: 140px;
     height: 90px;
     object-fit: contain;
     margin-bottom: 1rem;
-}
-
-.spotlight-card h3 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0 0 0.5rem;
-}
-
-.spotlight-card p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
 }
 
 .membership-badge {
@@ -289,31 +262,11 @@ nav {
 
 .directory-controls h2 {
     margin: 0;
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .toggle-buttons {
     display: flex;
     gap: 0.5rem;
-}
-
-.toggle-buttons button {
-    background-color: #0b3954;
-    border: 2px solid #0b3954;
-    border-radius: 4px;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
-}
-
-.toggle-buttons button:hover,
-.toggle-buttons button.active-view {
-    background-color: #f4a261;
-    border-color: #f4a261;
-    color: #18324b;
 }
 
 #member-container {
@@ -328,37 +281,6 @@ nav {
     gap: 1.5rem;
 }
 
-#member-container.grid .member-card {
-    background-color: #ffffff;
-    border: 1px solid #d8e0e8;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(24, 50, 75, 0.08);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#member-container.grid .member-card img {
-    width: 100%;
-    max-width: 140px;
-    height: 90px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-}
-
-#member-container.grid .member-card h3 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0 0 0.5rem;
-}
-
-#member-container.grid .member-card p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
-}
-
 #member-container.list {
     display: flex;
     flex-direction: column;
@@ -366,13 +288,12 @@ nav {
 }
 
 #member-container.list .member-card {
-    background-color: #ffffff;
-    border: 1px solid #d8e0e8;
-    border-radius: 4px;
-    padding: 0.75rem 1.25rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    text-align: left;
+    padding: 0.75rem 1.25rem;
 }
 
 #member-container.list .member-card:nth-child(even) {
@@ -396,17 +317,11 @@ nav {
     margin: 0;
     font-size: 1.05rem;
     min-width: 180px;
-    color: #0b3954;
 }
 
 #member-container.list .member-details p {
     margin: 0;
     font-size: 0.88rem;
-}
-
-#member-container.list .membership-level {
-    font-weight: 600;
-    color: #0b3954;
 }
 
 @media screen and (max-width: 600px) {
@@ -435,17 +350,16 @@ footer {
     margin: 0.25rem 0;
 }
 
-.social-links a {
-    color: #f4a261;
-    text-decoration: none;
-}
-
 .footer-info {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 1rem;
     text-align: center;
     font-size: 0.85rem;
     color: #e0e0e0;
+}
+
+.social-links a {
+    color: #f4a261;
 }
 
 .join-main,
@@ -455,25 +369,7 @@ footer {
     padding: 1.5rem 1rem 3rem;
 }
 
-.join-main h1,
-.thankyou-main h1 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 1.5rem;
-}
-
-.join-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
 .join-form {
-    background-color: #ffffff;
-    border: 1px solid #d8e0e8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 5px rgba(24, 50, 75, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -483,7 +379,6 @@ footer {
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    color: #0b3954;
     font-size: 0.9rem;
     gap: 0.35rem;
 }
@@ -503,56 +398,17 @@ footer {
 .join-form select:focus,
 .join-form textarea:focus {
     outline: 2px solid #f4a261;
-    border-color: #f4a261;
-}
-
-.submit-btn {
-    background-color: #0b3954;
-    color: #ffffff !important;
-    border: none;
-    border-radius: 4px;
-    padding: 0.85rem 1.5rem;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.submit-btn:hover {
-    background-color: #f4a261;
-    color: #18324b;
-}
-
-.membership-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .membership-card {
-    background-color: #ffffff;
-    border: 1px solid #d8e0e8;
-    border-radius: 8px;
-    padding: 1.25rem;
-    box-shadow: 0 2px 5px rgba(24, 50, 75, 0.08);
     opacity: 0;
     animation: cardFadeIn 0.8s ease forwards;
 }
 
-.np-card {
-    animation-delay: 0s;
-}
-
-.bronze-card {
-    animation-delay: 0.15s;
-}
-
-.silver-card {
-    animation-delay: 0.3s;
-}
-
-.gold-card {
-    animation-delay: 0.45s;
-}
+.np-card { animation-delay: 0s; }
+.bronze-card { animation-delay: 0.15s; }
+.silver-card { animation-delay: 0.3s; }
+.gold-card { animation-delay: 0.45s; }
 
 @keyframes cardFadeIn {
     from {
@@ -563,18 +419,6 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.membership-card h2 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0 0 0.5rem;
-    font-size: 1.15rem;
-}
-
-.membership-card p {
-    margin: 0 0 0.75rem;
-    font-size: 0.9rem;
 }
 
 .modal-link {
@@ -600,44 +444,10 @@ footer {
     background-color: rgba(11, 57, 84, 0.6);
 }
 
-.membership-modal h2 {
-    color: #0b3954;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0;
-}
-
 .membership-modal ul {
     padding-left: 1.25rem;
 }
 
 .membership-modal li {
     margin: 0.35rem 0;
-}
-
-.close-modal {
-    background-color: #0b3954;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-.close-modal:hover {
-    background-color: #f4a261;
-    color: #18324b;
-}
-
-.submission-details {
-    background-color: #ffffff;
-    border: 1px solid #d8e0e8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 2px 5px rgba(24, 50, 75, 0.08);
-}
-
-.submission-details p {
-    margin: 0.5rem 0;
 }

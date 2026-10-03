@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         members.forEach(member => {
             const card = document.createElement("article");
-            card.className = "spotlight-card";
+            card.className = "spotlight-card box";
 
             card.innerHTML = `
                 <img src="${member.image}" alt="${member.name} Logo" loading="lazy">
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         members.forEach(member => {
             const section = document.createElement("section");
-            section.className = "member-card";
+            section.className = "member-card box";
             const levelLabel = levels[member.level] || "Member";
 
             section.innerHTML = `
@@ -107,15 +107,15 @@ document.addEventListener("DOMContentLoaded", () => {
         gridBtn.addEventListener("click", () => {
             memberContainer.classList.add("grid");
             memberContainer.classList.remove("list");
-            gridBtn.classList.add("active-view");
-            listBtn.classList.remove("active-view");
+            gridBtn.classList.add("active");
+            listBtn.classList.remove("active");
         });
 
         listBtn.addEventListener("click", () => {
             memberContainer.classList.add("list");
             memberContainer.classList.remove("grid");
-            listBtn.classList.add("active-view");
-            gridBtn.classList.remove("active-view");
+            listBtn.classList.add("active");
+            gridBtn.classList.remove("active");
         });
     }
 

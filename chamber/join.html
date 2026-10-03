@@ -43,37 +43,31 @@
     <main class="join-main">
         <h1>Join the Chamber</h1>
         <div class="join-layout">
-            <form method="get" action="thankyou.html" class="join-form">
+            <form method="get" action="thankyou.html" class="join-form box">
                 <label>
                     First Name
                     <input type="text" name="firstname" title="Enter your first name" autocomplete="given-name" required>
                 </label>
-
                 <label>
                     Last Name
                     <input type="text" name="lastname" title="Enter your last name" autocomplete="family-name" required>
                 </label>
-
                 <label>
                     Organizational Title
                     <input type="text" name="orgtitle" title="Your title within the organization" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
                 </label>
-
                 <label>
                     Email Address
                     <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@business.com" required>
                 </label>
-
                 <label>
                     Mobile Phone Number
                     <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
                 </label>
-
                 <label>
                     Business/Organization Name
                     <input type="text" name="business" title="Enter your business or organization name" autocomplete="organization" required>
                 </label>
-
                 <label>
                     Membership Level
                     <select name="membership" title="Select a membership level" required>
@@ -84,34 +78,31 @@
                         <option value="gold">Gold Membership</option>
                     </select>
                 </label>
-
                 <label>
                     Business/Organization Description
                     <textarea name="description" title="Describe your business or organization" rows="4"></textarea>
                 </label>
-
                 <input type="hidden" name="timestamp" id="timestamp">
-
-                <input type="submit" value="Submit Application" class="submit-btn">
+                <input type="submit" value="Submit Application" class="btn">
             </form>
 
-            <section class="membership-cards">
-                <div class="membership-card np-card">
+            <section class="membership-cards stack">
+                <div class="membership-card box np-card">
                     <h2>NP Membership</h2>
                     <p>For non-profit organizations — no fee.</p>
                     <a href="#np-modal" class="modal-link" data-modal="np-modal">Learn More</a>
                 </div>
-                <div class="membership-card bronze-card">
+                <div class="membership-card box bronze-card">
                     <h2>Bronze Membership</h2>
                     <p>Entry-level benefits for small businesses.</p>
                     <a href="#bronze-modal" class="modal-link" data-modal="bronze-modal">Learn More</a>
                 </div>
-                <div class="membership-card silver-card">
+                <div class="membership-card box silver-card">
                     <h2>Silver Membership</h2>
                     <p>Expanded benefits and event discounts.</p>
                     <a href="#silver-modal" class="modal-link" data-modal="silver-modal">Learn More</a>
                 </div>
-                <div class="membership-card gold-card">
+                <div class="membership-card box gold-card">
                     <h2>Gold Membership</h2>
                     <p>Premier spotlight and advertising benefits.</p>
                     <a href="#gold-modal" class="modal-link" data-modal="gold-modal">Learn More</a>
@@ -127,7 +118,7 @@
             <li>Community networking events</li>
             <li>Non-profit directory listing</li>
         </ul>
-        <button class="close-modal">Close</button>
+        <button class="btn close-modal">Close</button>
     </dialog>
 
     <dialog id="bronze-modal" class="membership-modal">
@@ -137,7 +128,7 @@
             <li>Discounted event tickets</li>
             <li>Quarterly training sessions</li>
         </ul>
-        <button class="close-modal">Close</button>
+        <button class="btn close-modal">Close</button>
     </dialog>
 
     <dialog id="silver-modal" class="membership-modal">
@@ -147,7 +138,7 @@
             <li>Home page spotlight rotation</li>
             <li>10% discount on event sponsorships</li>
         </ul>
-        <button class="close-modal">Close</button>
+        <button class="btn close-modal">Close</button>
     </dialog>
 
     <dialog id="gold-modal" class="membership-modal">
@@ -158,7 +149,7 @@
             <li>Featured advertising in newsletters</li>
             <li>Complimentary event booth</li>
         </ul>
-        <button class="close-modal">Close</button>
+        <button class="btn close-modal">Close</button>
     </dialog>
 
     <footer>
