@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover | Brent Welsford Chamber of Commerce</title>
+    <meta name="description" content="Discover Pretoria's top attractions, landmarks, and cultural sites through the Brent Welsford Chamber of Commerce.">
+    <meta name="author" content="Brent Welsford">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Discover | Brent Welsford Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://brewe05.github.io/wdd231/chamber/images/hero.jpg">
+    <meta property="og:url" content="https://brewe05.github.io/wdd231/chamber/discover.html">
+    <meta property="og:description" content="Explore the landmarks and culture of Pretoria with the Brent Welsford Chamber of Commerce.">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/discover.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Brent Welsford Chamber of Commerce" class="logo">
+            <div class="title-area">
+                <h2>Brent Welsford Chamber Of Commerce</h2>
+                <p>Economic Growth &amp; Community</p>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button" aria-label="Toggle Menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-main">
+        <h1>Discover Pretoria</h1>
+        <p class="discover-intro">
+            Explore the landmarks, culture, and features that make Pretoria a
+            vibrant place to live, work, and do business.
+        </p>
+
+        <aside id="visit-message" class="visit-banner" aria-live="polite"></aside>
+
+        <section id="discover-grid" class="discover-grid" aria-label="Items of interest in Pretoria"></section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-box">
+                <p><strong>Brent Welsford Chamber of Commerce</strong></p>
+                <p>123 Innovation Street</p>
+                <p>Pretoria, South Africa</p>
+                <p>info@BWachamber.org</p>
+                <p>+(27) 72 527 3575</p>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a> | <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="currentYear"></span> Brent Welsford | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

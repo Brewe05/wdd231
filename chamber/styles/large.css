@@ -83,4 +83,25 @@
     #member-container.grid {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(240px, auto);
+        grid-template-areas:
+            "card-1 card-1 card-2 card-3"
+            "card-1 card-1 card-4 card-5"
+            "card-6 card-7 card-7 card-8"
+            "card-6 card-7 card-7 card-8";
+        gap: 1.5rem;
+    }
+
+    .card-1 figure,
+    .card-7 figure {
+        flex-grow: 1;
+    }
+
+    .card-1 img,
+    .card-7 img {
+        height: 100%;
+    }
 }

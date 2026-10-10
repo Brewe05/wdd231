@@ -1,0 +1,68 @@
+
+[{
+    "name": "Joanne Van Helsdingen",
+    "seat": "1",
+    "phone": "012-555-0101",
+    "relation": "family",
+    "invited": true,
+  },
+  {
+    "name": "Samkelo Ntamane",
+    "seat": "2",
+    "phone": "012-555-0202",
+    "website": "https://www.gardenista.com/",
+    "image": "images/business2.jpg",
+    "relation": "friend",
+    "other": "Organic fertilizers and rare plants"
+  },
+  {
+    "name": "Urban Cafe",
+    "seat": "3",    
+    "address": "88 Central Ave, Pretoria",
+    "phone": "012-555-0303",
+    "website": "https://www.starbucks.com/",
+    "image": "images/business3.jpg",
+    "relation": "friend",
+    "other": "Best coffee in the city"
+  },
+  {
+    "name": "Capital Design Studio",
+    "seat": "4",
+    "address": "14 Artisans Road, Pretoria",
+    "phone": "012-555-0404",
+    "website": "https://www.adobe.com/",
+    "image": "images/business4.jpg",
+    "relation": "colleague",
+    "other": "Branding, web design, and creative services"
+  },
+  {
+    "name": "Mamelodi Fresh Market",
+    "seat": "5",
+    "address": "9 Market Street, Pretoria",
+    "phone": "012-555-0505",
+    "website": "https://www.woolworths.co.za/",
+    "image": "images/business5.jpg",
+    "relation": "friend",
+    "other": "Fresh produce and locally sourced foods"
+  },
+  {
+    "name": "Tshwane Legal Partners",
+    "seat": "6",    
+    "address": "22 Justice Avenue, Pretoria",
+    "phone": "012-555-0606",
+    "website": "https://www.lssa.org.za/",
+    "image": "images/business6.jpg",
+    "relation": "colleague",
+    "other": "Business law and community legal support"
+  },
+  {
+    "name": "Jacaranda Wellness Centre",
+    "seat": "7",
+    "address": "31 Jacaranda Boulevard, Pretoria",
+    "phone": "012-555-0707",
+    "website": "https://www.discovery.co.za/",
+    "image": "images/business7.jpg",
+    "relation": "friend",
+    "other": "Wellness, fitness, and preventative care"
+  }
+]
