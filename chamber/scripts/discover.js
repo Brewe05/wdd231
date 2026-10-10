@@ -1,7 +1,5 @@
-// scripts/discover.js
 import { itemsOfInterest } from "../data/discover.mjs";
 
-/* ---------- 1. Render the 8 cards ---------- */
 const container = document.querySelector("#discover-grid");
 
 function buildCard(item, index) {
@@ -27,7 +25,6 @@ function buildCard(item, index) {
 
 itemsOfInterest.forEach((item, i) => container.appendChild(buildCard(item, i)));
 
-/* ---------- 2. localStorage visit tracking ---------- */
 const visitMsg = document.querySelector("#visit-message");
 const now = Date.now();
 const lastVisit = localStorage.getItem("discoverLastVisit");
