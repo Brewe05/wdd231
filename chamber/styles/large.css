@@ -1,16 +1,36 @@
+/* =========================================================
+   MEDIUM (641px+) — Discover 2-col + hover image effect
+   ========================================================= */
+@media screen and (min-width: 641px) {
+    .discover-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "card-1 card-2"
+            "card-3 card-4"
+            "card-5 card-6"
+            "card-7 card-8";
+        gap: 1.5rem;
+    }
+
+    /* Image hover effect ONLY on tablet+ (not mobile) */
+    .discover-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 18px rgba(24, 50, 75, 0.18);
+    }
+    .discover-card:hover img {
+        transform: scale(1.08);
+        filter: brightness(1.05) saturate(1.15);
+        box-shadow: 0 4px 12px rgba(11, 57, 84, 0.35);
+    }
+}
+
+/* =========================================================
+   LARGE (768px+) — Nav, home, directory, join, footer
+   ========================================================= */
 @media screen and (min-width: 768px) {
-    .header-container {
-        padding: 0.5rem 0;
-    }
-
-    .title-area h1,
-    .title-area h2 {
-        font-size: 1.6rem;
-    }
-
-    #menu-button {
-        display: none;
-    }
+    .header-container { padding: 0.5rem 0; }
+    .title-area h1, .title-area h2 { font-size: 1.6rem; }
+    #menu-button { display: none; }
 
     #nav-menu {
         display: flex !important;
@@ -19,47 +39,22 @@
         max-width: 1200px;
         margin: 0 auto;
     }
+    #nav-menu li a { border-bottom: none; padding: 1rem 1.5rem; font-weight: 600; }
 
-    #nav-menu li a {
-        border-bottom: none;
-        padding: 1rem 1.5rem;
-        font-weight: 600;
-    }
+    .hero-img { height: 380px; }
+    .hero-overlay h2 { font-size: 1.8rem; }
 
-    .hero-img {
-        height: 380px;
-    }
-
-    .hero-overlay h2 {
-        font-size: 1.8rem;
-    }
-
-    .home-content-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-    }
-
+    .home-content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
     .spotlight-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
     }
 
-    .forecast-container {
-        flex-direction: row;
-        gap: 0.5rem;
-    }
+    .forecast-container { flex-direction: row; gap: 0.5rem; }
+    .forecast-day { flex: 1; flex-direction: column; text-align: center; }
 
-    .forecast-day {
-        flex: 1;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #member-container.grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    #member-container.grid { grid-template-columns: repeat(3, 1fr); }
 
     .footer-content {
         flex-direction: row;
@@ -73,16 +68,14 @@
         gap: 2rem;
         align-items: start;
     }
-
-    .membership-cards {
-        flex-direction: column;
-    }
+    .membership-cards { flex-direction: column; }
 }
 
+/* =========================================================
+   XL (1024px+) — Directory 4-col + Discover feature layout
+   ========================================================= */
 @media screen and (min-width: 1024px) {
-    #member-container.grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    #member-container.grid { grid-template-columns: repeat(4, 1fr); }
 
     .discover-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -94,14 +87,6 @@
             "card-6 card-7 card-7 card-8";
         gap: 1.5rem;
     }
-
-    .card-1 figure,
-    .card-7 figure {
-        flex-grow: 1;
-    }
-
-    .card-1 img,
-    .card-7 img {
-        height: 100%;
-    }
+    .card-1 figure, .card-7 figure { flex-grow: 1; }
+    .card-1 img, .card-7 img { height: 100%; }
 }
