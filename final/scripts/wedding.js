@@ -1,17 +1,8 @@
-(function () {
-  'use strict';
-
-  const MAX_SEATS = 60;
-  const SEATS_PER_ROW = 8;
-  const DATA_URL = 'data/guests.json';
-  const RSVP_KEY = 'wdd231.wedding.rsvps';
-  const VISIT_KEY = 'wdd231.wedding.visits';
-  const ARRIVAL_TIME = '14:30';
-  const CEREMONY_TIME = '15:00';
-  const WEDDING_DATE_LABEL = 'Thursday, 21 October 2027';
-  const WEDDING_DATE_ISO = '2027-10-21T15:00:00+02:00';
-  const REL_LABELS = { immediate: 'Immediate family', extended: 'Extended family', friend: 'Friend' };
-  const REL_RANK = { immediate: 1, extended: 2, friend: 3 };
+import {
+  MAX_SEATS, SEATS_PER_ROW, DATA_URL, RSVP_KEY, VISIT_KEY,
+  ARRIVAL_TIME, CEREMONY_TIME, WEDDING_DATE_LABEL, WEDDING_DATE_ISO,
+  REL_LABELS, REL_RANK
+} from './wedding-config.js';
 
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
@@ -111,10 +102,9 @@
     if (!entry) return 'Seat not yet assigned.';
     const d = describeSeat(entry.seatStart);
     if (entry.seatEnd > entry.seatStart) {
-      return 'Seats ' + entry.seatStart + ' to ' + entry.seatEnd +
-             ', starting in row ' + d.row + ' on the ' + d.side + ' side of the aisle.';
-    }
-    return 'Seat ' + entry.seatStart + ', in row ' + d.row + ' on the ' + d.side + ' side of the aisle.';
+      return `Seats ${entry.seatStart} to ${entry.seatEnd}, starting in row ${d.row} on the ${d.side} side of the aisle.`;
+      }
+      return `Seat ${entry.seatStart}, in row ${d.row} on the ${d.side} side of the aisle.`;
   }
 
   function initNav() {
@@ -144,11 +134,11 @@
       const hours = Math.floor((d % 86400000) / 3600000);
       const mins = Math.floor((d % 3600000) / 60000);
       const secs = Math.floor((d % 60000) / 1000);
-      el.innerHTML =
-        '<li><span class="num">' + days  + '</span><span class="lbl">Days</span></li>' +
-        '<li><span class="num">' + hours + '</span><span class="lbl">Hours</span></li>' +
-        '<li><span class="num">' + mins  + '</span><span class="lbl">Minutes</span></li>' +
-        '<li><span class="num">' + secs  + '</span><span class="lbl">Seconds</span></li>';
+      el.innerHTML = `
+        <li><span class="num">${days}</span><span class="lbl">Days</span></li>
+        <li><span class="num">${hours}</span><span class="lbl">Hours</span></li>
+        <li><span class="num">${mins}</span><span class="lbl">Minutes</span></li>
+        <li><span class="num">${secs}</span><span class="lbl">Seconds</span></li>`;
     }
     tick();
     window.setInterval(tick, 1000);
@@ -344,18 +334,18 @@
         const seatLabel = seat
           ? 'Seat ' + seat.seatStart + (seat.seatEnd > seat.seatStart ? '&ndash;' + seat.seatEnd : '')
           : 'Not seated';
-        return '' +
-          '<article class="guest-card guest-card--' + esc(g.relationship) + '">' +
-            '<h3>' + esc(g.name) + '</h3>' +
-            '<p class="role">' + esc(g.role) + '</p>' +
-            '<ul>' +
-              '<li><span class="label">Connection</span> ' + esc(REL_LABELS[g.relationship] || 'Guest') + '</li>' +
-              '<li><span class="label">Phone</span> ' + esc(g.phone) + '</li>' +
-              '<li><span class="label">Seat</span> ' + seatLabel + '</li>' +
-              '<li><span class="label">Attending</span> ' + (g.attending ? 'Yes' : 'No') + '</li>' +
-            '</ul>' +
-            '<button class="btn btn--ghost" type="button" data-guest="' + esc(g.name) + '">More details</button>' +
-          '</article>';
+        return `
+          <article class="guest-card guest-card--${esc(g.relationship)}">
+            <h3>${esc(g.name)}</h3>
+            <p class="role">${esc(g.role)}</p>
+            <ul>
+              <li><span class="label">Connection</span> ${esc(REL_LABELS[g.relationship] || 'Guest')}</li>
+              <li><span class="label">Phone</span> ${esc(g.phone)}</li>
+              <li><span class="label">Seat</span> ${seatLabel}</li>
+              <li><span class="label">Attending</span> ${g.attending ? 'Yes' : 'No'}</li>
+            </ul>
+            <button class="btn btn--ghost" type="button" data-guest="${esc(g.name)}">More details</button>
+          </article>`;
       }).join('');
 
       if (status) status.textContent = 'Showing ' + visible.length + ' of ' + merged.length + ' guests.';
@@ -366,17 +356,17 @@
       if (!guest || !modal) return;
       const seat = plan.get(guest.name.toLowerCase());
       modalTitle.textContent = guest.name;
-      modalBody.innerHTML =
-        '<dl class="modal-list">' +
-          '<dt>Connection</dt><dd>' + esc(REL_LABELS[guest.relationship] || 'Guest') + '</dd>' +
-          '<dt>Role</dt><dd>' + esc(guest.role) + '</dd>' +
-          '<dt>Phone</dt><dd>' + esc(guest.phone) + '</dd>' +
-          '<dt>Email</dt><dd>' + esc(guest.email) + '</dd>' +
-          '<dt>Attending</dt><dd>' + (guest.attending ? 'Yes &mdash; 21 October 2027' : 'No &mdash; cannot attend') + '</dd>' +
-          '<dt>Seating</dt><dd>' + esc(seat ? seatSentence(seat) : 'Not yet seated') + '</dd>' +
-          '<dt>Note</dt><dd>' + (esc(guest.note) || '&mdash;') + '</dd>' +
-          '<dt>Source</dt><dd>' + esc(guest.source) + '</dd>' +
-        '</dl>';
+      modalBody.innerHTML = `
+        <dl class="modal-list">
+          <dt>Connection</dt><dd>${esc(REL_LABELS[guest.relationship] || 'Guest')}</dd>
+          <dt>Role</dt><dd>${esc(guest.role)}</dd>
+          <dt>Phone</dt><dd>${esc(guest.phone)}</dd>
+          <dt>Email</dt><dd>${esc(guest.email)}</dd>
+          <dt>Attending</dt><dd>${guest.attending ? 'Yes &mdash; 21 October 2027' : 'No &mdash; cannot attend'}</dd>
+          <dt>Seating</dt><dd>${esc(seat ? seatSentence(seat) : 'Not yet seated')}</dd>
+          <dt>Note</dt><dd>${esc(guest.note) || '&mdash;'}</dd>
+          <dt>Source</dt><dd>${esc(guest.source)}</dd>
+        </dl>`;
       if (typeof modal.showModal === 'function') modal.showModal();
       else modal.setAttribute('open', '');
     }
@@ -409,14 +399,15 @@
           const title = o
             ? 'Seat ' + s + ' — ' + o.name + ' (' + (REL_LABELS[o.relationship] || 'Guest') + ')'
             : 'Seat ' + s + ' — open';
-          return '<span class="seat ' + kind + '" title="' + esc(title) + '" aria-label="' + esc(title) + '">' + s + '</span>';
+          return `<span class="seat ${kind}" title="${esc(title)}" aria-label="${esc(title)}">${s}</span>`;
         }
-        html += '<div class="seat-row">' +
-          '<span class="seat-row__label">Row ' + row + '</span>' +
-          '<div class="seat-line">' + left.map(seatHtml).join('') + '</div>' +
-          '<div class="aisle" aria-hidden="true"></div>' +
-          '<div class="seat-line">' + right.map(seatHtml).join('') + '</div>' +
-        '</div>';
+        html += `
+          <div class="seat-row">
+            <span class="seat-row__label">Row ${row}</span>
+            <div class="seat-line">${left.map(seatHtml).join('')}</div>
+            <div class="aisle" aria-hidden="true"></div>
+            <div class="seat-line">${right.map(seatHtml).join('')}</div>
+          </div>`;
       }
       chart.innerHTML = html;
     }
@@ -450,6 +441,8 @@
     const params = new URLSearchParams(window.location.search);
     const reply = {
       name: params.get('name') || 'Guest',
+      email: params.get('email') || '',
+      phone: params.get('phone') || '',
       relationship: params.get('relationship') || '',
       attending: params.get('attending') || '',
       partySize: params.get('partySize') || '1',
@@ -482,7 +475,7 @@
       ? 'Your place is confirmed. Please arrive by ' + ARRIVAL_TIME + ' for the ' + CEREMONY_TIME + ' ceremony.'
       : 'If your plans change, you are always welcome to send us another reply.';
 
-    function row(term, value) { return '<div><dt>' + term + '</dt><dd>' + value + '</dd></div>'; }
+    function row(term, value) { return `<div><dt>${term}</dt><dd>${value}</dd></div>`; }
 
     list.innerHTML = [
       row('Name', esc(reply.name)),
@@ -505,4 +498,3 @@
     initDetailsPage();
     initConfirmPage();
   });
-})();

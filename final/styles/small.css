@@ -230,7 +230,7 @@ textarea{ resize:vertical; }
 .seat--immediate{ background:var(--green); border-color:var(--green-dark); color:var(--white); }
 .seat--extended{ background:#a8d3b8; border-color:var(--green-light); color:var(--green-dark); }
 .seat--friend{ background:#e8b4b4; border-color:var(--red); color:var(--red-dark); }
-.seat--empty{ background:var(--white); border-style:dashed; color:#b9c5bd; }
+.seat--empty{ background:var(--white); border-style:dashed; color:var(--muted); }
 
 .modal{ border:0; padding:0; border-radius:var(--radius); width:min(34rem,92vw); box-shadow:0 24px 60px rgba(0,0,0,.4); color:var(--ink); }
 .modal::backdrop{ background:rgba(13,43,28,.66); }

@@ -1,0 +1,11 @@
+export const MAX_SEATS = 60;
+export const SEATS_PER_ROW = 8;
+export const DATA_URL = 'data/guests.json';
+export const RSVP_KEY = 'wdd231.wedding.rsvps';
+export const VISIT_KEY = 'wdd231.wedding.visits';
+export const ARRIVAL_TIME = '14:30';
+export const CEREMONY_TIME = '15:00';
+export const WEDDING_DATE_LABEL = 'Thursday, 21 October 2027';
+export const WEDDING_DATE_ISO = '2027-10-21T15:00:00+02:00';
+export const REL_LABELS = { immediate: 'Immediate family', extended: 'Extended family', friend: 'Friend' };
+export const REL_RANK = { immediate: 1, extended: 2, friend: 3 };
