@@ -4,6 +4,9 @@ import {
   REL_LABELS, REL_RANK
 } from './wedding-config.js';
 
+(() => {
+  'use strict';
+
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
@@ -498,3 +501,4 @@ import {
     initDetailsPage();
     initConfirmPage();
   });
+})();

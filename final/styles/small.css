@@ -264,4 +264,5 @@ textarea{ resize:vertical; }
 .footer-links{ list-style:none; padding:0; margin:0 0 .9rem; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem 1.3rem; }
 .footer-links a{ color:#a8d3b8; font-size:.88rem; font-weight:600; }
 .footer-links a:hover{ color:var(--white); }
+.footer-links .video-note{ color:#a8d3b8; font-size:.88rem; font-weight:600; }
 .footer-copy{ margin:0; font-size:.78rem; color:#8fb6a0; }
