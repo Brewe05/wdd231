@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Joanne van Helsdingen",
+    "relationship": "immediate",
+    "role": "Mother of the groom",
+    "phone": "012-555-0101",
+    "email": "joanne.vh@gmail.com",
+    "attending": true,
+    "note": "Helping with the flowers and the guest book."
+  },
+  {
+    "id": 2,
+    "name": "Pieter van Helsdingen",
+    "relationship": "immediate",
+    "role": "Father of the groom",
+    "phone": "012-555-0102",
+    "email": "pieter.vh@gmail.com",
+    "attending": true,
+    "note": "Doing the welcome speech."
+  },
+  {
+    "id": 3,
+    "name": "Marlene Welsford",
+    "relationship": "immediate",
+    "role": "Mother of the bride",
+    "phone": "012-555-0103",
+    "email": "marlene.w@gmail.com",
+    "attending": true,
+    "note": "Walking Rebecca down the aisle."
+  },
+  {
+    "id": 4,
+    "name": "Trevor Welsford",
+    "relationship": "immediate",
+    "role": "Father of the bride",
+    "phone": "012-555-0104",
+    "email": "trevor.w@gmail.com",
+    "attending": true,
+    "note": "Bringing the family photo album for the display table."
+  },
+  {
+    "id": 5,
+    "name": "Elsa Welsford",
+    "relationship": "immediate",
+    "role": "Sister of the bride, maid of honour",
+    "phone": "012-555-0105",
+    "email": "elsa.w@gmail.com",
+    "attending": true,
+    "note": "Organising the bridal party."
+  },
+  {
+    "id": 6,
+    "name": "Daniel van Helsdingen",
+    "relationship": "immediate",
+    "role": "Brother of the groom, best man",
+    "phone": "012-555-0106",
+    "email": "daniel.vh@gmail.com",
+    "attending": true,
+    "note": "Best man speech is apparently a surprise."
+  },
+  {
+    "id": 7,
+    "name": "Sarie Botha",
+    "relationship": "extended",
+    "role": "Grandmother of the groom",
+    "phone": "012-555-0107",
+    "email": "sarie.b@gmail.com",
+    "attending": true,
+    "note": "Would like a soft seat near the aisle."
+  },
+  {
+    "id": 8,
+    "name": "Koos Botha",
+    "relationship": "extended",
+    "role": "Grandfather of the groom",
+    "phone": "012-555-0108",
+    "email": "koos.b@gmail.com",
+    "attending": true,
+    "note": "Bringing the camera."
+  },
+  {
+    "id": 9,
+    "name": "Rentia Fourie",
+    "relationship": "extended",
+    "role": "Aunt of the bride",
+    "phone": "012-555-0109",
+    "email": "rentia.f@gmail.com",
+    "attending": true,
+    "note": "Vegetarian meal please."
+  },
+  {
+    "id": 10,
+    "name": "Kobus Fourie",
+    "relationship": "extended",
+    "role": "Uncle of the bride",
+    "phone": "012-555-0110",
+    "email": "kobus.f@gmail.com",
+    "attending": false,
+    "note": "Working overseas, sends his love."
+  },
+  {
+    "id": 11,
+    "name": "Anja Fourie",
+    "relationship": "extended",
+    "role": "Cousin of the bride",
+    "phone": "012-555-0111",
+    "email": "anja.f@gmail.com",
+    "attending": true,
+    "note": "Would love a plus one if space allows."
+  },
+  {
+    "id": 12,
+    "name": "Samkelo Ntamane",
+    "relationship": "friend",
+    "role": "Best friend of the groom",
+    "phone": "012-555-0112",
+    "email": "samkelo.n@gmail.com",
+    "attending": true,
+    "note": "Requesting something with a beat after the first dance."
+  },
+  {
+    "id": 13,
+    "name": "Lerato Mokoena",
+    "relationship": "friend",
+    "role": "University friend of the bride",
+    "phone": "012-555-0113",
+    "email": "lerato.m@gmail.com",
+    "attending": true,
+    "note": "Gluten free meal please."
+  },
+  {
+    "id": 14,
+    "name": "Megan Oosthuizen",
+    "relationship": "friend",
+    "role": "Friend of the bride",
+    "phone": "012-555-0114",
+    "email": "megan.o@gmail.com",
+    "attending": true,
+    "note": "Bringing the confetti bubbles."
+  },
+  {
+    "id": 15,
+    "name": "Jarryd Bothma",
+    "relationship": "friend",
+    "role": "Friend from the mission",
+    "phone": "012-555-0115",
+    "email": "jarryd.b@gmail.com",
+    "attending": false,
+    "note": "Cannot travel that week, but will celebrate from afar."
+  },
+  {
+    "id": 16,
+    "name": "Nikita Pillay",
+    "relationship": "friend",
+    "role": "Work friend of the groom",
+    "phone": "012-555-0116",
+    "email": "nikita.p@gmail.com",
+    "attending": true,
+    "note": "Happy to help with the seating on the day."
+  }
+]

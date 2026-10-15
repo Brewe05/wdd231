@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP | Brent &amp; Rebecca Welsford — 21 October 2027</title>
+  <meta name="description" content="Reply to Brent and Rebecca Welsford's wedding invitation for 21 October 2027 at Geko Ridge Wedding Venue near Pretoria.">
+  <meta name="author" content="Brent Welsford">
+  <meta name="theme-color" content="#0d2b1c">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brent &amp; Rebecca Welsford">
+  <meta property="og:title" content="RSVP | Brent &amp; Rebecca Welsford — 21 October 2027">
+  <meta property="og:description" content="Join us at Geko Ridge Wedding Venue near Pretoria on 21 October 2027. Reply online and find your seat.">
+  <meta property="og:image" content="images/image1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">B&amp;R</span>
+          <span class="brand-text">
+            <span class="brand-name">Brent &amp; Rebecca</span>
+            <span class="brand-sub">21 October 2027</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span aria-hidden="true">&#9776;</span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">RSVP</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="details.html">Details &amp; Seating</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="hero__eyebrow">Together with our families</p>
+      <h1 class="hero__names">Brent <span class="amp">&amp;</span> Rebecca</h1>
+      <p class="hero__details">Thursday, 21 October 2027 &middot; Geko Ridge Wedding Venue, Pretoria</p>
+      <ul class="countdown" id="countdown" aria-label="Countdown to the wedding day"></ul>
+      <p class="hero__note">We are so glad you found your way here. Please tell us whether you can celebrate with us.</p>
+    </section>
+
+    <div class="wrap">
+      <section class="welcome-back" id="welcome-back" hidden aria-live="polite">
+        <h2 id="welcome-title">Welcome back</h2>
+        <p id="welcome-text"></p>
+      </section>
+    </div>
+
+    <section class="section" id="rsvp">
+      <div class="wrap rsvp-layout">
+        <div class="rsvp-intro">
+          <h2 class="section__title">Welcome &mdash; please RSVP</h2>
+          <p>
+            Every seat at Geko Ridge has a name on it, and we would love yours to be one of them.
+            Fill in the form and we will reserve your place, assign your seat according to how you
+            know us, and add you to the guest list.
+          </p>
+          <dl class="event-facts">
+            <div><dt>Date</dt><dd>Thursday, 21 October 2027</dd></div>
+            <div><dt>Arrival</dt><dd>14:30 &mdash; please be seated by 14:50</dd></div>
+            <div><dt>Ceremony</dt><dd>15:00</dd></div>
+            <div><dt>Venue</dt><dd>Geko Ridge Wedding Venue, near Pretoria, Gauteng</dd></div>
+            <div><dt>Dress code</dt><dd>Semi-formal &mdash; deep greens, warm reds and neutrals welcome</dd></div>
+          </dl>
+          <p class="note">Please reply by <strong>21 August 2027</strong> so we can finalise the seating plan.</p>
+          <p class="capacity" id="capacity-note" aria-live="polite">Checking how many seats are still open&hellip;</p>
+        </div>
+
+        <form class="rsvp-form" id="rsvp-form" method="get" action="rsvp_recieved.html">
+          <h2 class="form-title">Your reply</h2>
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Mobile number <span class="hint-inline">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="relationship">How do you know us?</label>
+            <select id="relationship" name="relationship" required>
+              <option value="">Please choose one</option>
+              <option value="immediate">Immediate family</option>
+              <option value="extended">Extended family</option>
+              <option value="friend">Friend</option>
+            </select>
+          </div>
+
+          <fieldset class="field">
+            <legend>Will you be available on 21 October 2027?</legend>
+            <div class="radio-row">
+              <label><input type="radio" name="attending" value="yes" required> Yes, I will be there</label>
+              <label><input type="radio" name="attending" value="no" required> No, I cannot make it</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="partySize">How many people are in your party?</label>
+            <input type="number" id="partySize" name="partySize" min="1" max="10" value="1" required>
+            <p class="hint">Include yourself. The venue holds a maximum of 60 guests.</p>
+          </div>
+
+          <div class="field">
+            <label for="reason" id="reason-label">
+              A message for the couple <span class="hint-inline" id="reason-optional">(optional)</span>
+            </label>
+            <textarea id="reason" name="reason" rows="4" aria-describedby="reason-hint"></textarea>
+            <p class="hint" id="reason-hint">Dietary needs, a song request, or a note for us.</p>
+          </div>
+
+          <input type="hidden" name="seat" id="seat-field" value="">
+          <div class="alert" id="form-message" hidden role="alert"></div>
+
+          <button class="btn btn--primary" type="submit">Send my RSVP</button>
+          <p class="form-note">Your reply is saved on this device and shown on the confirmation page.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-couple">Brent &amp; Rebecca Welsford &middot; 21 October 2027 &middot; Geko Ridge, Pretoria</p>
+      <ul class="footer-links">
+        <li><a href="details.html#attributions">Attributions</a></li>
+        <li><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" rel="noopener">Project walkthrough video</a></li>
+      </ul>
+      <p class="footer-copy">&copy; <span class="year">2027</span> Brent Welsford. Built by hand with HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/wedding.js" defer></script>
+</body>
+</html>
